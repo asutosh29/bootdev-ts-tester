@@ -13,6 +13,7 @@ export default defineConfig(
       // For example, to warn about unused variables:
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "prefer-const": "off",
     },
   },
   {

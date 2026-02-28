@@ -1,5 +1,5 @@
-import { describe, it, assert, withSubmit } from "./unit_test/utils";
-import { averageScore } from "./run";
+import { describe, it, assert, withSubmit } from "./unit_test/utils.js";
+import { averageScore } from "./unit_test/run.js";
 
 // Testing code goes here.
 describe("averageScore", () => {
