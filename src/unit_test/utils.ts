@@ -20,8 +20,3 @@ export function it(description: string, callback: any) {
     }
   }
 }
-
-// Functions
-export function averageScore(ratings: number[]) {
-  return 0;
-}

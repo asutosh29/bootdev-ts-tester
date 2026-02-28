@@ -1,10 +1,7 @@
 import { describe, it, assert, withSubmit } from "./unit_test/utils";
-import { averageScore } from "./unit_test/utils";
+import { averageScore } from "./run";
 
-// type RunCase = {
-//   ratings: number[];
-//   expected: number;
-// };
+// Testing code goes here.
 describe("averageScore", () => {
   const runCases = [
     {
