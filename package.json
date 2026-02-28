@@ -1,0 +1,20 @@
+{
+  "name": "learn-ts-bootdev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "tsc -b && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^25.3.2"
+  },
+  "dependencies": {
+    "@types/assert": "^1.5.11",
+    "assert": "^2.1.0"
+  }
+}
