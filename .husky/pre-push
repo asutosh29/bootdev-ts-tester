@@ -4,7 +4,7 @@
 branch=$(git symbolic-ref HEAD --short 2>/dev/null)
 
 # Check if branch name matches 'master', 'main', or starts with 'master:' or 'main:'
-if [[ "$branch" == "master" || "$branch" == "main" || "$branch" == master:* || "$branch" == main:* ]]; then
+if [[ "$branch" == "master" || "$branch" == "main" || "$branch" == *:master || "$branch" == *:master ]]; then
     echo "----------------------------------------------------"
     echo "ERROR: Direct pushes to the $branch branch are not allowed."
     echo "Please create a feature or hotfix branch and use a pull request."
