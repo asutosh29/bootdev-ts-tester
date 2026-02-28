@@ -5,14 +5,20 @@
   "type": "module",
   "scripts": {
     "test": "tsc -b && node ./dist/index.js",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "npx eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^25.3.2"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.3.2",
+    "eslint": "^10.0.2",
+    "globals": "^17.3.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
     "@types/assert": "^1.5.11",
