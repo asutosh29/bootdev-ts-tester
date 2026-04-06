@@ -1,6 +1,6 @@
 # Bootdev local tester
 
-Paste the relevant testing code in `main_test.ts` and the written code in `run.ts`
+Paste the relevant testing code in `src/index.ts` and the written code in `src/utils/run.ts`
 
 To run the tests
 
