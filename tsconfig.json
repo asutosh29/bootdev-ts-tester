@@ -5,8 +5,8 @@
     "outDir": "./dist/",
 
     // Environment Settings
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "target": "esnext",
     "types": [],
 
@@ -22,11 +22,10 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "include": ["src/**/*"]
 }

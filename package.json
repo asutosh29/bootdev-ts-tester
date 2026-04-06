@@ -2,9 +2,8 @@
   "name": "learn-ts-bootdev",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "npx tsx ./src/index.ts",
+    "test": "npx tsx ./src/main_test.ts",
     "prepare": "husky",
     "format": "prettier --write  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
     "format:check": "prettier --check  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
