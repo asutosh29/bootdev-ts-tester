@@ -6,7 +6,10 @@
   "scripts": {
     "test": "npx tsx ./src/index.ts",
     "prepare": "husky",
-    "lint": "npx eslint ."
+    "format": "prettier --write  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
+    "format:check": "prettier --check  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
+    "lint": "npx eslint .",
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,8 @@
     "@types/node": "^25.3.2",
     "eslint": "^10.0.2",
     "globals": "^17.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1"
