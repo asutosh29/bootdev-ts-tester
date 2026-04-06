@@ -1,26 +1,57 @@
-import { describe, it, assert, withSubmit } from "./unit_test/utils";
-import { averageScore } from "./run";
+import { describe, it, assert, withSubmit } from "./unit_test";
+import { interpolateComment } from "./utils";
 
-// Testing code goes here.
-describe("averageScore", () => {
+describe("appendComment", () => {
   const runCases = [
     {
-      ratings: [7, 11, 42],
-      expected: 20,
+      id: 418,
+      comment: "Refresh token is missing",
+      comments: ["salmon discount code", 418, "I can't remember my email", 420],
+      expected: [
+        "salmon discount code",
+        "Refresh token is missing",
+        "I can't remember my email",
+        420,
+      ],
     },
     {
-      ratings: [17, 76, 17, 87, 18, 61],
-      expected: 46,
+      id: 42,
+      comment: "will gippity be my gf?",
+      comments: ["add scarlett johansson voice option", "it's not its", 42],
+      expected: [
+        "add scarlett johansson voice option",
+        "it's not its",
+        "will gippity be my gf?",
+      ],
     },
   ];
+
   const submitCases = runCases.concat([
     {
-      ratings: [],
-      expected: 0,
+      id: 42,
+      comment: "How many roads must a man walk down?",
+      comments: [42, "What's yellow and dangerous?", 42],
+      expected: [
+        "How many roads must a man walk down?",
+        "What's yellow and dangerous?",
+        42,
+      ],
     },
     {
-      ratings: [1111, 1337, 80085],
-      expected: 27511,
+      id: 0,
+      comment: "Database is encrypted",
+      comments: [
+        "How can I pay with my archmage coin?",
+        79,
+        "the wizard bear isn't wearing pants",
+        81,
+      ],
+      expected: [
+        "How can I pay with my archmage coin?",
+        79,
+        "the wizard bear isn't wearing pants",
+        81,
+      ],
     },
   ]);
 
@@ -30,18 +61,28 @@ describe("averageScore", () => {
   }
 
   for (let i = 0; i < testCases.length; i++) {
-    // Prevent test case from being undefined
-    const testCase = testCases[i];
-    if (!testCase) {
-      continue;
-    }
-    const { ratings, expected } = testCase;
+    const { id, comment, comments, expected } = testCases[i];
     it(`Test ${i}`, () => {
-      const actual = averageScore(ratings);
-      console.log("Ratings: ", ratings);
-      console.log("Expected: ", expected);
-      console.log("Actual:   ", actual);
-      assert.strictEqual(actual, expected);
+      console.log("Inputs:");
+      console.log("- Id: ", id);
+      console.log("- Comment: ", comment);
+      console.log("- Comments:");
+      comments.forEach((item) => {
+        console.log(`  - ${item}`);
+      });
+
+      interpolateComment(id, comment, comments);
+
+      console.log("Expected:");
+      expected.forEach((item) => {
+        console.log("- ", item);
+      });
+      console.log("Actual:");
+      comments.forEach((item) => {
+        console.log("- ", item);
+      });
+
+      assert.deepEqual(expected, comments);
     });
     console.log("---------------------------------");
   }

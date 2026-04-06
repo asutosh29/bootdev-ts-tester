@@ -2,9 +2,10 @@
   "name": "learn-ts-bootdev",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "tsc -b && node ./dist/index.js",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -b",
+    "test": "npm run build && node ./dist/index.js",
     "prepare": "husky",
     "lint": "npx eslint ."
   },
