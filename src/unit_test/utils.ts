@@ -1,7 +1,7 @@
 import assert from "assert";
 
 // Toggle this to true to run the "submitCases" instead of just "runCases"
-export const withSubmit = false;
+export const withSubmit = true;
 export { assert };
 
 export function describe(description: string, callback: any) {
