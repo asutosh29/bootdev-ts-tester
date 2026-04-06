@@ -12,7 +12,7 @@ export class FeatureFlag<T extends string> {
     this.#flags.add(flag);
   }
 
-  isEnabled(flag: T) {
+  isEnabled(flag: T): boolean {
     return this.#flags.has(flag);
   }
 }
