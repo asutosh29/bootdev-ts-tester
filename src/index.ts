@@ -1,53 +1,33 @@
-import { describe, it, assert, withSubmit } from "./unit_test/utils.js";
-import { averageScore } from "./unit_test/run.js";
+// Paste the test files here!
+// Change the imported file names to JS
 
-// Testing code goes here.
-describe("averageScore", () => {
-  const runCases = [
-    {
-      ratings: [7, 11, 42],
-      expected: 20,
-    },
-    {
-      ratings: [17, 76, 17, 87, 18, 61],
-      expected: 46,
-    },
-  ];
-  const submitCases = runCases.concat([
-    {
-      ratings: [],
-      expected: 0,
-    },
-    {
-      ratings: [1111, 1337, 80085],
-      expected: 27511,
-    },
-  ]);
+import { describe, it, assert } from "./unit_test/index.js";
+import { FeatureFlag } from "./utils/index.js";
 
-  let testCases = runCases;
-  if (withSubmit) {
-    testCases = submitCases;
-  }
+describe("FeatureFlag", () => {
+  type BG3Flag =
+    | "enable_gale_romance"
+    | "karlach_epilogue"
+    | "exploding_barrel_mode";
 
-  for (let i = 0; i < testCases.length; i++) {
-    // Prevent test case from being undefined
-    const testCase = testCases[i];
-    if (!testCase) {
-      continue;
-    }
-    const { ratings, expected } = testCase;
-    it(`Test ${i}`, () => {
-      const actual = averageScore(ratings);
-      console.log("Ratings: ", ratings);
-      console.log("Expected: ", expected);
-      console.log("Actual:   ", actual);
-      assert.strictEqual(actual, expected);
-    });
-    console.log("---------------------------------");
-  }
+  it("should report false for a flag that was never enabled", () => {
+    const flags = new FeatureFlag<BG3Flag>();
+    assert.strictEqual(flags.isEnabled("enable_gale_romance"), false);
+  });
 
-  const numSkipped = submitCases.length - testCases.length;
-  if (numSkipped > 0) {
-    console.log(`- Skip: ${numSkipped} test case(s) for submit`);
-  }
+  it("should return true after enabling a flag", () => {
+    const flags = new FeatureFlag<BG3Flag>();
+    flags.enable("exploding_barrel_mode");
+    assert.strictEqual(flags.isEnabled("exploding_barrel_mode"), true);
+  });
+
+  it("should support enabling multiple flags", () => {
+    const flags = new FeatureFlag<BG3Flag>();
+    flags.enable("karlach_epilogue");
+    flags.enable("enable_gale_romance");
+
+    assert.strictEqual(flags.isEnabled("karlach_epilogue"), true);
+    assert.strictEqual(flags.isEnabled("enable_gale_romance"), true);
+    assert.strictEqual(flags.isEnabled("exploding_barrel_mode"), false);
+  });
 });
