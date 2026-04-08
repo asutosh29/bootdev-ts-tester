@@ -1,0 +1,12 @@
+# Boot.dev Local Sync Configuration
+
+host: localhost
+port: 8001
+
+# Workspace path where files will be written
+workspacePath: /Users/aditya/03-TechEd/boot-dev-angular
+
+# File mappings: payload key -> relative file path
+files:
+  code: src/utils.ts
+  test: src/main_test.ts

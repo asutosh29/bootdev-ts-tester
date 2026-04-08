@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Boot.dev Local Sync",
+  "version": "1.0.0",
+  "description": "Sync code and tests from Boot.dev to your local machine",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://*.boot.dev/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.boot.dev/*"],
+      "js": ["config.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+  }
+}

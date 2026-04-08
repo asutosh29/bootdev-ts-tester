@@ -8,7 +8,9 @@
     "format": "prettier --write  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
     "format:check": "prettier --check  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
     "lint": "npx eslint .",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "server": "npx tsx ./src/server/server.ts",
+    "server:bg": "npx tsx ./src/server/server.ts &"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +30,10 @@
     "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
+    "@hono/node-server": "^1.19.13",
     "@types/assert": "^1.5.11",
-    "assert": "^2.1.0"
+    "assert": "^2.1.0",
+    "hono": "^4.12.12",
+    "yaml": "^2.8.3"
   }
 }
