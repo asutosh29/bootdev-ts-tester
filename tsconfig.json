@@ -5,11 +5,11 @@
     "outDir": "./dist/",
 
     // Environment Settings
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "node16",
+    "moduleResolution": "Node16",
     "target": "esnext",
     "types": [],
-    
+
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
@@ -22,7 +22,6 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",

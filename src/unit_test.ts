@@ -1,4 +1,4 @@
-import assert from "assert";
+import * as assert from "assert";
 
 // Toggle this to true to run the "submitCases" instead of just "runCases"
 export const withSubmit = true;

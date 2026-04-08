@@ -1,14 +1,15 @@
-# Bootdev local tester
+# Bootdev Local Tester
 
-Paste the relevant testing code in `src/index.ts` and the written code in `src/utils/run.ts`
+A local testing environment for Boot.dev exercises.
 
-To run the tests
+## Usage
 
-```bash
-npm run test
-```
+1. Add your solution code in `src/utils.ts`
+2. Add test cases in `src/main_test.ts`
+3. Toggle `withSubmit` in `src/unit_test.ts` to run submit-only test cases
 
-## Available scripts
+## Scripts
 
-1. `npm run test` to test the code
-2. `npm run lint` to lint the code
+- `npm run test` - Run tests
+- `npm run lint` - Lint code
+- `npm run format` - Format code
